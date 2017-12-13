@@ -318,7 +318,7 @@ defmodule Absinthe.Execution.ArgumentsTest do
         doc = """
         { requiredThing }
         """
-        assert_result {:ok, %{errors: [%{message: ~s(In argument "name": Expected type "InputName!", found null.)}]}}, doc |> run(Schema)
+        assert_result {:ok, %{errors: [%{message: ~s(Field "requiredThing" is missing required argument: name. Expected type "InputName!", found null.)}]}}, doc |> run(Schema)
       end
     end
 
